@@ -24,7 +24,7 @@ const Messages = (props) => {
       </div>
       <div className={s.message_wraper}>
         <div className="personnes_items">
-          {props.dialogsData.map((dialog) => {
+          {props.state.dialogsData.map((dialog) => {
             return <Dialogs id={dialog.id} name={dialog.name} />;
           })}
           {/* <Dialogs id="1" name="Erick" />
@@ -34,7 +34,7 @@ const Messages = (props) => {
           <Dialogs id="5" name="Nicolas" /> */}
         </div>
         <div className="messages_items">
-          {props.messagesData.map((message)=>{
+          {props.state.messagesData.map((message)=>{
             return <MessagesItems id = {message.id} message = {message.messages}/>
           })}
           {/* <MessagesItems message="Hello, how are you" />
