@@ -1,10 +1,6 @@
-import "./App.css";
-import Header from "./Components/Header/Header";
-import Profile from "./Components/Profile/Profile";
-import Navbar from "./Components/Navbar/Navbar";
-import Messages from "./Components/Messages/Messages";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-function App(props) {
+import image from "../../Images/image_content.jpg";
+import MyPosts from "./MyPosts/MyPosts";
+const Profile = (props) => {
 //   let posts=[{
 //     message:"hello how are you",
 //     source:"https://cdn.shopify.com/s/files/1/0287/6738/7780/products/PORTRAIT-OLLOW-BLEU.png?v=1597638270 ",
@@ -26,20 +22,18 @@ function App(props) {
 //     nbLike:"70",
 //   },
 // ]
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Navbar />
-        {/* <Profile />  */}
-        {/* <Messages /> */}
-        <Routes>
-          <Route path="/profile" element={<Profile posts = {props.posts}/>} />
-          <Route path="/messages" element={<Messages dialogsData = {props.dialogsData} messagesData = {props.messagesData}/>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-}
 
-export default App;
+  return (
+    <div>
+      <div className="profile">
+        <div>
+          <img src={image} alt="Belle plage" />
+        </div>
+        <div>ava + description</div>
+        <MyPosts posts ={props.posts}/>
+      </div>
+    </div>
+  );
+};
+
+export default Profile;
