@@ -1,10 +1,10 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-import { displayTree } from './render';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
+import App from "./App";
 import state from "./Redux/state";
-// import { addPost } from "./Redux/state";
+import { addPost } from "./Redux/state";
+import { subscriber } from "./Redux/state"
 // let posts=[{
 //   message:"hello how are you",
 //   source:"https://cdn.shopify.com/s/files/1/0287/6738/7780/products/PORTRAIT-OLLOW-BLEU.png?v=1597638270 ",
@@ -43,13 +43,14 @@ import state from "./Redux/state";
 // ];
 
 
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// export const displayTree = () => {
-//   root.render(
-//     <React.StrictMode>
-//       {/* <App  posts = {state.posts} dialogsData = {state.dialogsData} messagesData ={state.messagesData}/> */}
-//       <App state={state} addPost={addPost} />
-//     </React.StrictMode>
-//   );
-// }
+const root = ReactDOM.createRoot(document.getElementById("root"));
+let displayTree = () => {
+    root.render(
+        <React.StrictMode>
+            {/* <App  posts = {state.posts} dialogsData = {state.dialogsData} messagesData ={state.messagesData}/> */}
+            <App state={state} addPost={addPost} />
+        </React.StrictMode>
+    );
+}
 displayTree(state);
+subscriber(displayTree);
