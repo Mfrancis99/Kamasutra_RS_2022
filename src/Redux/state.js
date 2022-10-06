@@ -28,7 +28,8 @@ let displayTree = () => {
         source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCTzImyvhQUIcWrDhuREGXZH_DFKEr-K4D1Q&usqp=CAU",
         nbLike: "70",
       },
-      ]
+      ],
+      newPostText: ''
     },
     dialogPage: {
       dialogsData: [
@@ -59,6 +60,10 @@ export let addPost = (postMessage) => {
     nbLike: 80,
   }
   state.profilePage.posts.push(newPost);
+  displayTree(state);
+}
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
   displayTree(state);
 }
 

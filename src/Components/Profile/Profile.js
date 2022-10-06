@@ -30,7 +30,11 @@ const Profile = (props) => {
           <img src={image} alt="Belle plage" />
         </div>
         <div>ava + description</div>
-        <MyPosts posts={props.state.posts} addPost={props.addPost} />
+        <MyPosts posts={props.state.posts}
+          newPostText={props.state.newPostText}
+          updateNewPostText={props.updateNewPostText} addPost={props.addPost} />
+
+
       </div>
     </div>
   );

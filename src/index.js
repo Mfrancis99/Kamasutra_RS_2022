@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import state from "./Redux/state";
-import { addPost } from "./Redux/state";
+import { addPost, updateNewPostText } from "./Redux/state";
 import { subscriber } from "./Redux/state"
 // let posts=[{
 //   message:"hello how are you",
@@ -48,7 +48,7 @@ let displayTree = () => {
     root.render(
         <React.StrictMode>
             {/* <App  posts = {state.posts} dialogsData = {state.dialogsData} messagesData ={state.messagesData}/> */}
-            <App state={state} addPost={addPost} />
+            <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />
         </React.StrictMode>
     );
 }
